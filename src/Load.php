@@ -1,6 +1,6 @@
-<?php namespace Lean;
+<?php namespace NewFang;
 
-use Lean\Helpers\FileSystem;
+use NewFang\Helpers\FileSystem;
 
 /**
  * Class that is responsible for handle all the logic behind the loading
@@ -11,13 +11,13 @@ use Lean\Helpers\FileSystem;
 class Load {
 
 	/**
-	 * This method allow dynamic creation of custom getter so we can load anything
-	 * like for example: Load::myDirectoryisFunny( 'sample', $args );
+	 * This method dynamically creates a custom getter so we can load whatever is necessary
+	 * For Example: Load::AtomicDirbeGotten( 'atom', $args );
 	 *
 	 * @since 0.1.0
 	 *
 	 * @param string $type The type of file to be loaded.
-	 * @param array  $arguments The arguments frmo the static call: file and args.
+	 * @param array  $arguments The arguments from the static call: file and args.
 	 */
 	public static function __callStatic( $type, $arguments ) {
 		if ( empty( $arguments ) ) {
@@ -26,9 +26,9 @@ class Load {
 		$file = $arguments[0];
 		$total = count( $arguments );
 		$args = [];
-		// The start point is 1 as the 0 is the name of the file to be loadeed.
-		// So we make sure every next set of arguments are merged with the original set of arguments.
-		for ( $i = 1; $i < $total; $i++ ) {
+		// The start point is index 1 as index 0 is the name of the file to be loaded.
+		// As part of this process, wee make sure every next set of arguments are merged with the original set of arguments.
+		for ( $i = 1; $i < $total; $i++ ) {√
 			$set = $arguments[ $i ];
 			if ( is_array( $set ) ) {
 				$args = wp_parse_args( $set, $args );

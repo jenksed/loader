@@ -1,10 +1,7 @@
-# Loader  
-
-[![Build Status](https://travis-ci.org/moxie-lean/loader.svg?branch=master)](https://travis-ci.org/moxie-lean/loader) 
-
+# Loader
 > Allows to load files from directories with a more sugared syntax, and
 > allowing the use of params passed to the file.
-
+Forked from WeAreNolte's [Lean\Loader](https://github.com/wearenolte/loader) package. 
 # Benefits 
 
 By using the Loader package, instead of the regular `get_template_part` or 
@@ -42,7 +39,7 @@ include_once( get_stylesheet_directory()  . '/vendor/autoload.php' );
 ```php
 <?php
 // File: index.php
-use Lean\Load;
+use NewFang\Load;
 
 $args = [
   'title' => get_the_title(),
@@ -82,7 +79,7 @@ sets are merged into a single one with `wp_parse_args` to create a single set.
 
 ```php
 <?php 
-use Lean\Load;
+use NewFang\Load;
 
 $set_1 = [
   'a' => 1,
@@ -162,12 +159,12 @@ if ( empty( $args['title'] || empty( $args['url'] ) ) ) {
 # Filters
 
 There are a coupple of filters that you can use in order to extend the default 
-functionalitty of the loader. You can place all the filters on `functions.php` of 
+functionality of the loader. You can place all the filters on `functions.php` of 
 your theme or any file of your plugin.
 
 ## Register directories where to look for files.
 
-By default the loader is going to look in the root of the theme but if you have a 
+By default, the loader is going to look in the root of the theme but if you have a 
 structure of files such as: 
 
 ```
@@ -183,7 +180,7 @@ To load files from `views` directory you can use:
 
 ```php
 <?php 
-use Lean\Load;
+use NewFang\Load;
 
 $arguments = [];
 Load::views( 'partials/single', $arguments ); 
@@ -205,7 +202,7 @@ Whith this change you now can write something like:
 
 ```php
 <?php 
-use Lean\Load;
+use NewFang\Load;
 
 $arguments = [];
 Load::partials( 'single', $arguments ); 
@@ -236,7 +233,7 @@ Which give us a sintax like this:
 
 ```php
 <?php
-use Lean\Load;
+use NewFang\Load;
 $arguments = [];
 Load::blocks( 'single', $arguments );
 ?>

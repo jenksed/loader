@@ -1,4 +1,4 @@
-<?php namespace Lean\Helpers;
+<?php namespace NewFang\Helpers;
 
 /**
  * Class that handle all the logic related with file system and search files
